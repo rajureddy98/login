@@ -1,2 +1,2 @@
 FROM tomcat:8
-COPY target/*.war /usr/local/tomcat/webapps/
+COPY target/auth-1.3.5.RELEASE.war /usr/local/tomcat/webapps/
