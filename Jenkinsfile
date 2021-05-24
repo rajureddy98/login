@@ -8,5 +8,8 @@ node{
     stage('maven'){
        sh ' mvn clean package'
     }
+    stage('docker build'){
+        sh 'docker build -t login:1.0 .'
+    }
 }
 
