@@ -17,7 +17,7 @@ node{
         sh 'docker push rajureddy98/login:1.0'
     }
     stage('connect to docker system'){
-        sh 'ssh -o StrictHostKeyChecking=no root@13.126.134.216'
+        sh 'ssh -o StrictHostKeyChecking=no ec2-user@13.126.134.216'
         sh 'docker run -d -p 8080:8080 rajureddy98/login:1.0'
     }
 }
