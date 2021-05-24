@@ -11,5 +11,11 @@ node{
     stage('docker build'){
         sh 'docker build -t login:1.0 .'
     }
+    stage('docker login and push'){
+        if(sh 'docker login -u=rajureddy98 -p=rajureddy98'){
+            sh 'docker tag login:1.0 rajureddy98/login:1.0'
+            sh 'docker push rajureddy98/login:1.0'
+        }
+    }
 }
 
