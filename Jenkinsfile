@@ -5,5 +5,8 @@ node{
     stage('hello'){
       sh 'echo "success"'
     }
+    stage('maven'){
+        mvn clean package
+    }
 }
 
