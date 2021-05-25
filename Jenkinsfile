@@ -17,8 +17,7 @@ node{
         sh 'docker push rajureddy98/login:1.0'
     } */
     stage('execute playbook'){
-        sh 'whoami'
-        sh 'ansible -m ping all'    
+        sh 'ansible-playbook dockerrun.yaml'    
     }
 }
 
