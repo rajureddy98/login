@@ -1,7 +1,6 @@
 ---
 - hosts: all
-  become: true
-  become_user: ansadmin
+  remote_user: ansadmin
   tasks:
   - name: Install docker
     yum:
