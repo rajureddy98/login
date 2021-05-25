@@ -17,7 +17,7 @@ node{
         sh 'docker push rajureddy98/login:1.0'
     }
     stage('execute playbook'){
-        ansiblePlaybook become: true, becomeUser: 'ansadmin', colorized: true, disableHostKeyChecking: true, installation: 'ansible', playbook: 'dockerrun.yaml'
+        ansiblePlaybook become: true, becomeUser: 'root', colorized: true, disableHostKeyChecking: true, installation: 'ansible', playbook: 'dockerrun.yaml'
     }
 }
 
