@@ -16,6 +16,9 @@ node{
         sh 'docker tag login:1.0 rajureddy98/login:1.0'
         sh 'docker push rajureddy98/login:1.0'
     }
+    stage('docker build'){
+        sh 'su ansadmin'
+    }
     stage('connect to docker system'){
         sh 'ansible-playbook dockerrun.yaml'
     }
