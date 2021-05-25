@@ -3,12 +3,31 @@
   become: true
   become_user: root
   tasks:
-  - name: Update and upgrade apt packages
+  - name: Update apt packages
     become: true
     apt:
       update_cache: yes
-      upgrade: yes
   - name: Install docker
     apt:
       name: docker
       state: latest
+  - name: start docker service
+    service:
+      name: docker
+      state: started
+  - name: install python
+    apt:
+      name: python-pip
+      state: present
+  - name: install docker-py
+    pip: 
+      name: docker-py
+      state: present
+  - name: start container
+    docker_container:
+      name: myapp
+      image: rajureddy98/myapp:1.0
+      state: started
+      published_ports:
+        - 0.0.0.0:8080:8080
+      
