@@ -3,15 +3,11 @@
   become: true
   become_user: root
   tasks:
-  - name: Run whoami without become.
-    command: whoami
-    changed_when: false
-    become: false
-    register: whoami
-
-  - name: Set a fact with the user name.
-    set_fact:
-      login_user: "{{ whoami.stdout }}"
+  - name: Update and upgrade apt packages
+    become: true
+    apt:
+      update_cache: yes
+      upgrade: yes
   - name: Install docker
     apt:
       name: docker
