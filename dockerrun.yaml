@@ -27,7 +27,7 @@
   - name: start container
     docker_container:
       name: myapp
-      image: rajureddy98/myapp:1.0
+      image: rajureddy98/login:1.0
       state: started
       published_ports:
         - 0.0.0.0:8080:8080
