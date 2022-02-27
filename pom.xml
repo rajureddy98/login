@@ -67,7 +67,7 @@
               <configuration>
                 <archive>
                   <manifest>
-                    <mainClass>my.package.to.my.MainClass</mainClass>
+                    <mainClass>com.hellokoding.auth.WebApplication.java</mainClass>
                   </manifest>
                 </archive>
               </configuration>
