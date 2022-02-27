@@ -14,7 +14,7 @@ node{
     stage('docker login and push'){
         sh 'docker login -u=rajureddy98 -p=rajureddy98'
         sh 'docker tag login:1.0 rajureddy98/login:2.1'
-        sh 'docker push rajureddy98/login:1.0'
+        sh 'docker push rajureddy98/login:2.1'
     }
     stage('execute playbook'){
         sh 'ansible-playbook dockerrun.yaml'    
