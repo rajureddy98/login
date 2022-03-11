@@ -17,7 +17,7 @@ node{
         sh 'docker push rajureddy98/login:2.1'
     }
     stage('execute playbook'){
-        sh 'ansible-playbook dockerrun.yaml'    
+        sh 'sudo ansible-playbook dockerrun.yaml'    
     }
 }
 
